@@ -1,0 +1,39 @@
+/* styles/globals.css */
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Base styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333; /* Dark gray text */
+    line-height: 1.6;
+  }
+  
+  /* Link styles */
+  a {
+    color: #0070f3; /* Blue links */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+  }
+  
