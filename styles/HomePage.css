@@ -1,0 +1,148 @@
+/* HomePage.css */
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100%;
+  }
+  
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Header Styles */
+  .site-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .site-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    animation: fadeInDown 1s;
+  }
+  
+  /* Main Content Styles */
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+  }
+  
+  .content h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #333;
+    animation: fadeInUp 1s;
+  }
+  
+  .role-button, .login-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75em 2em;
+    margin: 0.5em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeInUp 1.5s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .role-button:hover, .login-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .role-button:active, .login-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Footer Styles */
+  .site-footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .site-header h1 {
+      font-size: 2em;
+    }
+  
+    .content h2 {
+      font-size: 1.5em;
+    }
+  
+    .role-button, .login-button {
+      padding: 0.5em 1.5em;
+      font-size: 0.9em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .site-header h1 {
+      font-size: 1.75em;
+    }
+  
+    .content h2 {
+      font-size: 1.25em;
+    }
+  
+    .role-button, .login-button {
+      padding: 0.5em 1em;
+      font-size: 0.8em;
+      margin: 0.25em;
+    }
+  }
+  

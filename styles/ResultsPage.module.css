@@ -1,0 +1,22 @@
+/* styles/ResultsPage.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.resultsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resultsTable th,
+.resultsTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.resultsTable th {
+  background-color: #f2f2f2;
+}

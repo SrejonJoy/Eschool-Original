@@ -1,0 +1,39 @@
+/* SelectQuizPage.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .pageTitle {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .quizList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .quizItem {
+    margin-bottom: 15px;
+  }
+  
+  .quizLink {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .quizLink:hover {
+    color: #0056b3;
+  }
+  
+  .noQuizzes {
+    text-align: center;
+    margin-top: 20px;
+  }
