@@ -14,6 +14,7 @@ interface Course {
 
 const AllCoursesPage = () => {
   const [courses, setCourses] = useState<Course[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const router = useRouter();
 
   useEffect(() => {
@@ -21,13 +22,13 @@ const AllCoursesPage = () => {
       try {
         const response = await fetch('/api/auth/courses');
         const data = await response.json();
-        
+
         const transformedCourses = data.map((course: any): Course => ({
           _id: course._id.toString(),
           name: course.name,
           price: parseFloat(course.price),
           thumbnail: course.thumbnail || '/s.jpg', // Fallback to a default image if thumbnail is undefined
-          userEmail: course.userEmail
+          userEmail: course.userEmail,
         }));
 
         setCourses(transformedCourses);
@@ -62,12 +63,26 @@ const AllCoursesPage = () => {
     }
   };
 
+  // Filter courses based on search query
+  const filteredCourses = courses.filter(course =>
+    course.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">All Courses</h1>
-      {courses.length > 0 ? (
+      
+      <input
+        type="text"
+        placeholder="Search courses..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="mb-4 border rounded py-2 px-3 w-full"
+      />
+
+      {filteredCourses.length > 0 ? (
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses.map((course) => (
+          {filteredCourses.map((course) => (
             <li key={course._id} className="bg-white rounded-lg shadow-md overflow-hidden">
               <Link href={`/course/${course._id}`}>
                 <div 
