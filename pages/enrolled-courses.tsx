@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import styles from '../styles/EnrolledCourses.module.css'; // Import the CSS module
 
 interface Course {
   _id: string;
@@ -46,38 +47,38 @@ const EnrolledCoursesPage = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>; // Use a CSS class for loading state
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Enrolled Courses</h1>
+    <div className={styles.container}> {/* Use styles from the CSS module */}
+      <h1 className={styles.title}>Enrolled Courses</h1>
       {courses.length > 0 ? (
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className={styles.courseList}>
           {courses.map((course) => (
-            <li key={course._id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <li key={course._id} className={styles.courseCard}>
               <Link href={`/course/${course._id}`}>
                 <div 
-                  className="block relative h-48 bg-cover bg-center" 
+                  className={styles.thumbnail} 
                   style={{ 
                     backgroundImage: `url(${course.thumbnail})`
                   }}
                 >
-                  <span className="absolute inset-0 flex items-center justify-center bg-black opacity-50 text-white text-xl font-bold">
+                  <span className={styles.courseName}>
                     {course.name}
                   </span>
                 </div>
               </Link>
-              <div className="px-4 py-3">
-                <h3 className="text-xl font-semibold mb-2">{course.name}</h3>
-                <p className="text-gray-600">Price: ${Number(course.price).toFixed(2)}</p>
-                <p className="text-gray-600">Enrolled on: {new Date(course.enrolledAt).toLocaleDateString()}</p>
+              <div className={styles.details}>
+                <h3 className={styles.courseTitle}>{course.name}</h3>
+                <p className={styles.price}>Price: ${Number(course.price).toFixed(2)}</p>
+                <p className={styles.enrolledDate}>Enrolled on: {new Date(course.enrolledAt).toLocaleDateString()}</p>
               </div>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No enrolled courses found.</p>
+        <p className={styles.noCourses}>No enrolled courses found.</p>
       )}
     </div>
   );

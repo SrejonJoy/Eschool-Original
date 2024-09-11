@@ -1,51 +1,80 @@
+/* styles/WelcomePage.module.css */
+
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #f0f4f8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height */
+  background-image: url('welcome.gif'); /* Set your GIF image path here */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: -15px; /* Reduced margin to move higher */
+  animation: slideIn 0.5s ease; /* Slide-in animation */
+}
+
+.userRole {
+  font-size: 1.25rem;
+  margin-bottom: 20px; /* Space below userRole for button group */
+}
+
+.buttonGroup {
+  display: flex; /* Change to flex for horizontal alignment */
+  flex-direction: row; /* Align buttons in a row */
+  gap: 10px; /* Space between buttons */
+  margin-top: 5px; /* Margin for button group */
+}
+
+/* Unified button styles */
+.button, .btnLink, .createCourseButton, .createQuizButton, 
+.viewAllCoursesButton, .aboutButton, .enrolledCoursesButton, 
+.quizButton, .resultsButton {
+  background: rgba(255, 71, 87, 0.8); /* Unified button background */
+  color: #fff; /* Button text color */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.3s ease; /* Animation for hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+}
+
+.button:hover, .btnLink:hover, .createCourseButton:hover, 
+.createQuizButton:hover, .viewAllCoursesButton:hover, 
+.aboutButton:hover, .enrolledCoursesButton:hover, 
+.quizButton:hover, .resultsButton:hover {
+  background: rgba(255, 107, 129, 0.9); /* Lighter red on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .title {
-    color: #333;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
   }
-  
-  .buttonGroup {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
   }
-  
-  .button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0070f3;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .button:hover {
-    background-color: #005bb5;
-    transform: translateY(-2px);
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}

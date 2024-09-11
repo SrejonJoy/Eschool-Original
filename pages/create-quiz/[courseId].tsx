@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import styles from '../../styles/CreateQuiz.module.css' // Import the CSS module
 
 interface Question {
   title: string;
@@ -36,8 +37,6 @@ const CreateQuizPage = () => {
         setUserData(parsedUserData)  // Set user data in state
         const teacherEmail = parsedUserData.email
 
-        console.log('Email ta:', parsedUserData.email);
-        
         // Fetch user name from database
         const res = await fetch(`/api/auth/get-user-name?email=${teacherEmail}`)
         const { name } = await res.json()
@@ -70,9 +69,6 @@ const CreateQuizPage = () => {
         createdBy: userName,
         userEmail: userData?.email || '',  // Access userData from state
       }
-
-      console.log('Quiz Data:', quizData);
-      console.log('User Email:', userData?.email || '');
 
       const response = await fetch(`/api/auth/create-quiz/${courseId}`, {
         method: 'POST',
@@ -129,7 +125,7 @@ const CreateQuizPage = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Create Quiz for Course: {courseId}</h1>
       
       <form onSubmit={handleSubmit}>
@@ -158,9 +154,9 @@ const CreateQuizPage = () => {
               />
             </div>
 
-            <div>Options:</div>
+            <div className={styles.options}>Options:</div>
             {question.options.map((option, optionIndex) => (
-              <div key={optionIndex}>
+              <div key={optionIndex} className={styles.option}>
                 <input
                   type="text"
                   value={option}
@@ -178,7 +174,7 @@ const CreateQuizPage = () => {
             ))}
 
             {index > 0 && (
-              <button type="button" onClick={() => handleRemoveQuestion(index)}>
+              <button type="button" className={styles.remove-question-button} onClick={() => handleRemoveQuestion(index)}>
                 Remove Question
               </button>
             )}

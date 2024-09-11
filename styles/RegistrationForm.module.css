@@ -1,17 +1,95 @@
-/* RegistrationForm.module.css */
+/* styles/RegistrationForm.module.css */
 
 .registrationFormContainer {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: #fff;
+    width: 100vw;  /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    margin: 0;     /* No margin */
+    padding: 40px; /* Padding around the content */
+    border-radius: 0; /* No rounded corners */
+    box-shadow: none; /* Remove shadow */
+    background: url('reg.gif') no-repeat center center / cover; /* Set your background image */
     font-family: Arial, sans-serif;
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 
 .title {
-    color: #333;
+    color: #fff; /* White color for better contrast */
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2.5rem; /* Adjust font size as needed */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+}
+
+/* Style for labels */
+.registrationFormContainer label {
+    width: 100%; /* Full width for labels */
+    text-align: left; /* Align text to the left */
+    color: #fff; /* White color for labels */
+    margin-top: 10px; /* Space above the label */
+}
+
+/* Specific styles for input fields: Name, ID, Email, Phone, Address */
+.registrationFormContainer input[name="name"],
+.registrationFormContainer input[name="id"],
+.registrationFormContainer input[name="email"],
+.registrationFormContainer input[name="phone"],
+.registrationFormContainer input[name="address"] {
+    width: 60%; /* Full width inputs */
+    padding: 15px; /* Increased padding for larger input boxes */
+    margin: 10px 0; /* Margin for vertical spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Increased font size for better visibility */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+/* Keep default styles for other input types (e.g., password) */
+.registrationFormContainer input[type="password"] {
+    width: 60%; /* Full width inputs */
+    padding: 10px; /* Regular padding */
+    margin: 10px 0; /* Margin for vertical spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem; /* Regular font size */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.registrationFormContainer input[name="name"]:focus,
+.registrationFormContainer input[name="id"]:focus,
+.registrationFormContainer input[name="email"]:focus,
+.registrationFormContainer input[name="phone"]:focus,
+.registrationFormContainer input[name="address"]:focus {
+    border-color: #0070f3; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+
+.registrationFormContainer .button {
+    width: 100%; /* Full width for the button */
+    padding: 100px; /* Regular padding */
+    background-color: #0070f3; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 5rem; /* Font size for buttons */
+    transition: background-color 0.3s; /* Transition for button background */
+}
+
+.registrationFormContainer .button:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .registrationFormContainer {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .title {
+        font-size: 2rem; /* Smaller title font size */
+    }
 }

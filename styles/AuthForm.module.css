@@ -1,0 +1,72 @@
+/* styles/AuthForm.module.css */
+
+.authFormContainer {
+    max-width: 500px;  /* Set a maximum width for the form */
+    margin: 0 auto;    /* Center the form */
+    padding: 40px;     /* Add padding */
+    border-radius: 10px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    display: flex;     /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+h1 {
+    color: #333; /* Dark gray color for the title */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 2rem; /* Larger font size for the title */
+}
+
+input {
+    width: 100%; /* Full width inputs */
+    padding: 12px; /* Padding for inputs */
+    margin: 10px 0; /* Margin for spacing between inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    font-size: 1rem; /* Base font size for inputs */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+input:focus {
+    border-color: #0070f3; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    background-color: #0070f3; /* Blue background for buttons */
+    color: #fff; /* White text color */
+    padding: 12px; /* Padding for buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Base font size for buttons */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s; /* Transition for background color */
+}
+
+button:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+}
+
+/* Button for sending OTP */
+button[type="button"] {
+    background-color: #ffc107; /* Yellow background for the OTP button */
+    color: #333; /* Dark text color */
+}
+
+button[type="button"]:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .authFormContainer {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Smaller title font size */
+    }
+}

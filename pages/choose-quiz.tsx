@@ -1,8 +1,5 @@
-// pages/choose-quiz.tsx
-
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import styles from '../styles/ChooseQuizPage.module.css';
 
 interface Course {
@@ -54,6 +51,8 @@ const ChooseQuizPage = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.shape + ' ' + styles.shape1}></div>
+      <div className={styles.shape + ' ' + styles.shape2}></div>
       <h1 className={styles.pageTitle}>Choose Course</h1>
       
       {courses.length > 0 ? (

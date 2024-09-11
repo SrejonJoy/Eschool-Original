@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import styles from '../styles/AllCourses.module.css'; // Import the new CSS module
 
 interface Course {
   _id: string;
@@ -69,21 +70,21 @@ const AllCoursesPage = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">All Courses</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>All Courses</h1> {/* Apply styles from the module */}
       
       <input
         type="text"
         placeholder="Search courses..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="mb-4 border rounded py-2 px-3 w-full"
+        className={styles.input} // Apply input styles
       />
 
       {filteredCourses.length > 0 ? (
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className={styles.courseList}> {/* Apply styles for the list */}
           {filteredCourses.map((course) => (
-            <li key={course._id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <li key={course._id} className={styles.courseCard}> {/* Apply styles for the card */}
               <Link href={`/course/${course._id}`}>
                 <div 
                   className="block relative h-48 bg-cover bg-center" 

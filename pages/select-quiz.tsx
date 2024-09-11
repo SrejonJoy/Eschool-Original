@@ -1,5 +1,3 @@
-// pages/select-quiz.tsx
-
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -44,7 +42,7 @@ const SelectQuizPage = () => {
     };
 
     fetchQuizzes();
-  }, []);
+  }, [router.query.courseId]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -52,6 +50,8 @@ const SelectQuizPage = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.shape + ' ' + styles.shape1}></div>
+      <div className={styles.shape + ' ' + styles.shape2}></div>
       <h1 className={styles.pageTitle}>Select Quiz</h1>
       
       {quizzes.length > 0 ? (

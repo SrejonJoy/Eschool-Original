@@ -1,0 +1,40 @@
+/* AllCourses.module.css */
+
+.container {
+    padding: 20px;
+  }
+  
+  .container h1 {
+    text-align: center; /* Center the heading */
+    font-size: 3rem; /* Increased font size */
+    margin-bottom: 20px; /* Margin below the heading */
+  }
+  
+  .input {
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Border style */
+    padding: 12px; /* Padding inside the input */
+    font-size: 1rem; /* Font size */
+    transition: border-color 0.3s; /* Transition for border color */
+    width: 100%; /* Full width */
+  }
+  
+  .courseList {
+    display: grid; /* Use grid layout for course cards */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between cards */
+  }
+  
+  .courseCard {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation on hover */
+  }
+  
+  .courseCard:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  

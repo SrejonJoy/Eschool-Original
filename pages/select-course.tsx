@@ -1,7 +1,8 @@
 // pages/select-course.tsx
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import styles from '../styles/SelectCourse.module.css'; // Import the CSS
 
 // Define an interface for the Course object
 interface Course {
@@ -12,42 +13,42 @@ interface Course {
 }
 
 const SelectCoursePage = () => {
-  const [selectedCourseId, setSelectedCourseId] = useState('')
-  const [courses, setCourses] = useState<Course[]>([])
-  const router = useRouter()
+  const [selectedCourseId, setSelectedCourseId] = useState('');
+  const [courses, setCourses] = useState<Course[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchTeacherEmailAndCourses = async () => {
       // Fetch teacher's email from local storage
-      const storedData = localStorage.getItem('userData')
+      const storedData = localStorage.getItem('userData');
       if (!storedData) {
-        alert('User data not found. Please login again.')
-        router.push('/login')
-        return
+        alert('User data not found. Please login again.');
+        router.push('/login');
+        return;
       }
       
-      const userData = JSON.parse(storedData)
-      const teacherEmail = userData.email
+      const userData = JSON.parse(storedData);
+      const teacherEmail = userData.email;
       
       // Fetch courses created by this teacher
-      const res = await fetch(`/api/auth/courses?teacherEmail=${teacherEmail}`)
-      const teacherCourses = await res.json() as Course[]
+      const res = await fetch(`/api/auth/courses?teacherEmail=${teacherEmail}`);
+      const teacherCourses = await res.json() as Course[];
       
-      setCourses(teacherCourses)
-    }
+      setCourses(teacherCourses);
+    };
 
-    fetchTeacherEmailAndCourses()
-  }, [])
+    fetchTeacherEmailAndCourses();
+  }, []);
 
   const handleSelectCourse = async (courseId: string) => {
-    setSelectedCourseId(courseId)
+    setSelectedCourseId(courseId);
     
     // Redirect to quiz creation page
-    router.push(`/create-quiz/${courseId}`)
-  }
+    router.push(`/create-quiz/${courseId}`);
+  };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Select Course</h2>
       {courses.length > 0 ? (
         <ul>
@@ -63,7 +64,7 @@ const SelectCoursePage = () => {
         <p>No courses found.</p>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SelectCoursePage
+export default SelectCoursePage;

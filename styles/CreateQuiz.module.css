@@ -1,0 +1,99 @@
+/* CreateQuiz.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f8f9fa; /* Light background for the container */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #007bff; /* Bright blue for the title */
+  margin-bottom: 20px;
+}
+
+.question-title {
+  color: #343a40; /* Dark gray for question titles */
+}
+
+.label {
+  font-weight: bold;
+  display: block; /* Block display for labels */
+  margin-top: 15px; /* Space above labels */
+}
+
+.input {
+  width: 100%; /* Full width input */
+  padding: 12px;
+  margin-top: 5px; /* Space above input */
+  border: 2px solid #ced4da; /* Light border */
+  border-radius: 6px;
+  font-size: 16px; /* Standard font size */
+  transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.button {
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px; /* Space above buttons */
+  transition: background-color 0.3s, transform 0.2s; /* Button effects */
+  width: 100%; /* Full width for buttons */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.button:disabled {
+  background-color: #6c757d; /* Gray background for disabled button */
+  cursor: not-allowed; /* Change cursor */
+}
+
+.options {
+  margin-top: 10px; /* Space above options */
+}
+
+.option {
+  display: flex; /* Use flexbox for options */
+  align-items: center; /* Align items vertically */
+  margin: 8px 0; /* Space between options */
+}
+
+.remove-question-button {
+  background-color: #dc3545; /* Red color for remove button */
+  color: white;
+  margin-top: 10px; /* Space above remove button */
+}
+
+.remove-question-button:hover {
+  background-color: #c82333; /* Darker shade on hover */
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .title {
+      font-size: 28px; /* Adjust font size for smaller screens */
+  }
+
+  .input, .button {
+      font-size: 14px; /* Adjust font size for smaller devices */
+  }
+}
